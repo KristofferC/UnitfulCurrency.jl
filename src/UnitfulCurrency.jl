@@ -18,8 +18,8 @@ include("fiat.jl")
 include("crypto.jl")
 include("pair.jl")
 
-const localunits = Unitful.basefactors
-const localpromotion = Unitful.promotion
+const localunits = copy(Unitful.basefactors)
+const localpromotion = copy(Unitful.promotion)
 function __init__()
     merge!(Unitful.basefactors, localunits)
     merge!(Unitful.promotion, localpromotion)
